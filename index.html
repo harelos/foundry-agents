@@ -105,11 +105,24 @@
 <section id="get"><div class="wrap">
   <h2>Get early access</h2>
   <p style="color:var(--dim);max-width:600px">Free while in beta. Drop your email and I'll send the download + updates. Windows first; macOS/Linux next.</p>
-  <!-- EMAIL CAPTURE: replace action with your Formspree/Buttondown/ConvertKit endpoint -->
-  <form class="signup" action="https://formspree.io/f/REPLACE_ID" method="POST">
-    <input type="email" name="email" placeholder="you@email.com" required />
+  <!-- Working out of the box via mailto. Swap for Formspree/Buttondown later for silent capture. -->
+  <form class="signup" id="notify" onsubmit="return sendNotify(event)">
+    <input type="email" id="notifyEmail" placeholder="you@email.com" required />
     <button class="btn primary" type="submit">Notify me</button>
   </form>
+  <p id="notifyMsg" style="color:var(--dim);font-size:14px;margin-top:10px;display:none">Thanks — your email app will open to confirm. 🎉</p>
+  <script>
+    function sendNotify(e){
+      e.preventDefault();
+      var v=document.getElementById('notifyEmail').value.trim();
+      if(!v) return false;
+      document.getElementById('notifyMsg').style.display='block';
+      window.location.href='mailto:harel1990@gmail.com'
+        +'?subject='+encodeURIComponent('Foundry early access')
+        +'&body='+encodeURIComponent('Please add me to Foundry early access: '+v);
+      return false;
+    }
+  </script>
 </div></section>
 
 <footer>
