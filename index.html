@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Foundry — Run a team of AI agents from your desktop</title>
+<meta name="description" content="Foundry is a Windows desktop app that lets one person run a whole team of AI agents — each with a role and personality — working in parallel, messaging each other, and reviewing each other's work." />
+<!-- Open Graph: makes shared links + directory previews look good -->
+<meta property="og:title" content="Foundry — Run a team of AI agents from your desktop" />
+<meta property="og:description" content="One person. A whole team of AI agents. Working in parallel, talking to each other, reviewing each other's work. Local & private." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="og.png" />
+<style>
+  :root{
+    --bg:#0f0e0c; --panel:#17150f; --line:#2a2820; --ink:#f3efe6; --dim:#b8b0a0;
+    --accent:#e7a44b; --accent2:#c9822e;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  header{padding:28px 0;display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+  .logo .dot{width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 22px rgba(231,164,75,.5)}
+  nav a{color:var(--dim);text-decoration:none;margin-left:20px;font-size:14px}
+  nav a:hover{color:var(--ink)}
+  .hero{padding:64px 0 40px;text-align:center}
+  .hero h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:.2em 0;letter-spacing:-1px}
+  .hero h1 span{background:linear-gradient(135deg,var(--accent),#f4c17d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:clamp(17px,2.4vw,21px);color:var(--dim);max-width:640px;margin:18px auto 30px}
+  .cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:14px 26px;border-radius:12px;font-weight:600;text-decoration:none;transition:.15s}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#1a1408;box-shadow:0 8px 30px rgba(231,164,75,.28)}
+  .btn.primary:hover{transform:translateY(-1px)}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--accent)}
+  .demo{margin:40px auto 0;max-width:840px;aspect-ratio:16/9;border-radius:16px;border:1px solid var(--line);
+    background:radial-gradient(120% 120% at 50% 0,#1d1a12,#0f0e0c);display:flex;align-items:center;justify-content:center;color:var(--dim);position:relative;overflow:hidden}
+  .demo .play{width:74px;height:74px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(231,164,75,.5)}
+  .demo .play::before{content:"";border-left:22px solid #1a1408;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:5px}
+  .demo small{position:absolute;bottom:12px;color:#7a7364}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-size:28px;letter-spacing:-.5px;margin:0 0 26px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--dim);font-size:15px}
+  .steps{counter-reset:s;display:grid;gap:14px}
+  .step{display:flex;gap:14px;align-items:flex-start}
+  .step .n{counter-increment:s;flex:0 0 34px;height:34px;border-radius:9px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+  .step .n::before{content:counter(s)}
+  .signup{display:flex;gap:10px;flex-wrap:wrap;max-width:480px;margin-top:10px}
+  .signup input{flex:1;min-width:220px;padding:13px 15px;border-radius:11px;border:1px solid var(--line);background:#0c0b08;color:var(--ink)}
+  footer{padding:40px 0 60px;color:#7a7364;font-size:14px;text-align:center;border-top:1px solid var(--line)}
+  .kbd{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo"><span class="dot"></span> Foundry</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="https://github.com/harelos/foundry-agents">GitHub</a>
+      <a href="#get" class="kbd">Get early access</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>One person.<br><span>A whole team of AI agents.</span></h1>
+    <p>Foundry is a desktop app that lets you run a team of AI agents — each with a role and personality — working in parallel, messaging each other, and reviewing each other's work. Local, private, yours.</p>
+    <div class="cta">
+      <a class="btn primary" href="#get">Get early access — free</a>
+      <a class="btn ghost" href="#get">▶ Watch 60-sec demo</a>
+    </div>
+    <a class="demo" href="#get" aria-label="Play demo">
+      <div class="play"></div>
+      <small>Replace with your 60-sec demo (embed a YouTube/Loom, or drop a looping .mp4/.gif)</small>
+    </a>
+  </div>
+</div>
+
+<section id="features"><div class="wrap">
+  <h2>Not a chatbot. A team.</h2>
+  <div class="grid">
+    <div class="card"><h3>Run many agents at once</h3><p>A researcher, a developer, a copywriter, a CMO — each with its own role, personality, and model.</p></div>
+    <div class="card"><h3>True parallel work</h3><p>Agents keep working when you switch away or close the window. Nothing stops just because you looked elsewhere.</p></div>
+    <div class="card"><h3>They talk to each other</h3><p>Agents message teammates directly, hand off work, and get answers back — a real team, not silos.</p></div>
+    <div class="card"><h3>Peer review built in</h3><p>One agent inspects and critiques another's work before it ever reaches you.</p></div>
+    <div class="card"><h3>Any model</h3><p>Drives Claude Code and any OpenAI-compatible LLM. Mix and match per agent.</p></div>
+    <div class="card"><h3>Local & private</h3><p>Runs on your machine with your keys and your files. No cloud lock-in, no bloat.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div><b>Hire your team.</b> Add agents, give each a role, personality, and model.</div></div>
+    <div class="step"><div class="n"></div><div><b>Hand them the work.</b> Chat, queue tasks, drop in files. They start immediately.</div></div>
+    <div class="step"><div class="n"></div><div><b>They run in parallel.</b> Working, messaging each other, and reviewing output — all at once.</div></div>
+    <div class="step"><div class="n"></div><div><b>You get results.</b> Reviewed, coordinated, done — like running a studio, solo.</div></div>
+  </div>
+</div></section>
+
+<section id="get"><div class="wrap">
+  <h2>Get early access</h2>
+  <p style="color:var(--dim);max-width:600px">Free while in beta. Drop your email and I'll send the download + updates. Windows first; macOS/Linux next.</p>
+  <!-- EMAIL CAPTURE: replace action with your Formspree/Buttondown/ConvertKit endpoint -->
+  <form class="signup" action="https://formspree.io/f/REPLACE_ID" method="POST">
+    <input type="email" name="email" placeholder="you@email.com" required />
+    <button class="btn primary" type="submit">Notify me</button>
+  </form>
+</div></section>
+
+<footer>
+  Built with Foundry's own agents. · <a href="https://github.com/harelos/foundry-agents" style="color:var(--accent)">GitHub</a> · <a href="#get" style="color:var(--accent)">Demo</a>
+</footer>
+</body>
+</html>
